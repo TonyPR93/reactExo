@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/cat.jpg
+src/chicken.jpg
+src/cow.jpg
+src/dog.jpg
+src/horse.jpg
+src/sheep.jpg
