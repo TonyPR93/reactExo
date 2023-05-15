@@ -1,6 +1,12 @@
-import { createStore } from 'redux';
-import inputReducer from '../reducers/reducerCalculatrice';
+import { createStore, combineReducers } from 'redux';
+import reducerCalculatrice from '../reducers/reducerCalculatrice';
+import reducerExplication from '../reducers/reducerExplication'
 
-const store = createStore(inputReducer);
+const rootReducers = combineReducers({
+    calculatrice: reducerCalculatrice,
+    explication: reducerExplication
+})
+
+const store = createStore(rootReducers);
 
 export default store;
