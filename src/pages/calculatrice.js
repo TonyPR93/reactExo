@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addInput, clearInput, addResult } from '../actions/actionCalculatrice';
+import { addInput, clearInput, addResult, clearAllLastInput } from '../actions/actionCalculatrice';
 
 
 
@@ -119,7 +119,8 @@ function mapStateToProps(state) {
     return {
       addInput: (value) => dispatch(addInput(value)),
       addResult: () => dispatch(addResult()),
-      clearInput: () => dispatch(clearInput())
+      clearInput: () => dispatch(clearInput()),
+      clearAllLastInput : () => dispatch(clearAllLastInput())
     //   addToHistory: (expression, result) => dispatch(addToHistory(expression, result))
     };
   }
