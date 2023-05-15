@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { addInput, clearInput, addResult, clearAllLastInput } from '../actions/actionCalculatrice';
 
 
-
 class Calculatrice extends React.Component{
     constructor(props){
         super(props)
@@ -63,7 +62,6 @@ class Calculatrice extends React.Component{
                             <button onClick={() => this.props.addInput('.')}>,</button>
                             <button onClick={() => this.props.addResult()}>=</button>
                         </div>
-
                     </div>
                 </div>
                 <div className="history">
@@ -75,33 +73,6 @@ class Calculatrice extends React.Component{
                     </div>
                     ))}
                 </div>
-                <Explication />
-            </div>
-        )
-    }
-}
-
-
-class Explication extends React.Component{
-
-    render(){
-        return(
-            <div className='explication'>
-                <div>
-                    <h3>Partie 1</h3>
-                    <p>
-                        Création de deux classes React, Le premier est la classe calculatrice.
-                    </p>
-                    <p>
-                        Constitué de deux div principalement, le "board" ou l'on voit le calcul et le resultat et la div qui contient tous les boutons
-                    </p>
-                </div>
-                <div>
-                    <h3>Partie 2</h3>
-                    <p>
-                        Création la state dans ma classe calculatrice. Elle contient deux valeurs "input" qui affichera le calcul et "resultat".
-                    </p>
-                </div>
             </div>
         )
     }
@@ -109,9 +80,9 @@ class Explication extends React.Component{
 
 function mapStateToProps(state) {
     return {
-      input: state.input,
-      result: state.result,
-      history: state.history
+      input: state.calculatrice.input,
+      result: state.calculatrice.result,
+      history: state.calculatrice.history
     };
   }
   
