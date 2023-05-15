@@ -13,7 +13,7 @@ import Page5 from './pages/exo56'
 import Page6 from './pages/exo7'
 import Page7 from './pages/exo8'
 import Page8 from './pages/exo9'
-import Rr1 from './pages/calculatrice'
+import Rr1 from './pages/appCalculatrice'
 
 
 class App extends React.Component {
