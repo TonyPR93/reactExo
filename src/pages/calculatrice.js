@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addInput, clearInput } from '../actions/actionCalculatrice';
+import { addInput, clearInput, addResult } from '../actions/actionCalculatrice';
 
 
 
@@ -9,7 +9,8 @@ class Calculatrice extends React.Component{
         super(props)
         this.state={
             input: '',
-            result:0
+            result:0,
+            history: []
         }
     }
 
@@ -27,10 +28,10 @@ class Calculatrice extends React.Component{
                     </div>
                     <div className='boutons'>
                         <div className='row'>
-                            <button onClick={() => this.props.addInput('7')}>%</button>
-                            <button onClick={() => this.props.clearInput()}>CE</button>
+                            <button onClick={() => this.props.addInput('%')}>%</button>
+                            <button onClick={() => this.props.clearAllLastInput()}>CE</button>
                             <button onClick={() => this.props.clearInput()}>C</button>
-                            <button onClick={() => this.props.addInput('7')}>Eff</button>
+                            <button onClick={() => this.props.clearLastInput()}>Eff</button>
                         </div>
                         <div className='row'>
                             <button onClick={() => this.props.addInput('')}>1/X</button>
@@ -60,10 +61,19 @@ class Calculatrice extends React.Component{
                             <button onClick={() => this.props.addInput('')}>+/-</button>
                             <button onClick={() => this.props.addInput('0')}>0</button>
                             <button onClick={() => this.props.addInput('.')}>,</button>
-                            <button onClick={() => this.props.addInput('')}>=</button>
+                            <button onClick={() => this.props.addResult()}>=</button>
                         </div>
 
                     </div>
+                </div>
+                <div className="history">
+                    <h2>Historique</h2>
+                    {this.props.history.map((entry, index) => (
+                    <div key={index}>
+                        <span>{entry.expression} = </span>
+                        <span>{entry.result}</span>
+                    </div>
+                    ))}
                 </div>
                 <Explication />
             </div>
@@ -100,14 +110,17 @@ class Explication extends React.Component{
 function mapStateToProps(state) {
     return {
       input: state.input,
-      result: state.result
+      result: state.result,
+      history: state.history
     };
   }
   
   function mapDispatchToProps(dispatch) {
     return {
       addInput: (value) => dispatch(addInput(value)),
+      addResult: () => dispatch(addResult()),
       clearInput: () => dispatch(clearInput())
+    //   addToHistory: (expression, result) => dispatch(addToHistory(expression, result))
     };
   }
   
