@@ -14,7 +14,7 @@ import Page6 from './pages/exo7'
 import Page7 from './pages/exo8'
 import Page8 from './pages/exo9'
 import Rr1 from './pages/appCalculatrice'
-
+import Rr2 from './pages/randomQuoteGenerator/appRandomQuote'
 
 class App extends React.Component {
   render() {
@@ -56,6 +56,9 @@ class App extends React.Component {
               <li>
                 <Link to="/rr1">Calculatrice</Link>
               </li>
+              <li>
+                <Link to="/rr2">Random quote generator</Link>
+              </li>
             </ul>
           </nav>
 
@@ -70,6 +73,7 @@ class App extends React.Component {
             <Route path="/page8" element={<Page8 />} />
             <Route path="/" element={<Accueil />} />
             <Route path="/rr1" element={<Rr1 />}/>
+            <Route path="/rr2" element={<Rr2 />}/>
           </Routes>
         </div>
       </BrowserRouter>
