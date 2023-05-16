@@ -1,0 +1,55 @@
+{
+    "citations": [
+      {
+        "id": 1,
+        "quote": "La vie est soit une aventure audacieuse, soit rien du tout.",
+        "auteur": "Helen Keller"
+      },
+      {
+        "id": 2,
+        "quote": "La créativité, c'est l'intelligence qui s'amuse.",
+        "auteur": "Albert Einstein"
+      },
+      {
+        "id": 3,
+        "quote": "La véritable éducation consiste à tirer le meilleur de soi-même.",
+        "auteur": "Mahatma Gandhi"
+      },
+      {
+        "id": 4,
+        "quote": "Le bonheur est la seule chose qui se double si on le partage.",
+        "auteur": "Albert Schweitzer"
+      },
+      {
+        "id": 5,
+        "quote": "La seule façon de faire du bon travail est d'aimer ce que vous faites.",
+        "auteur": "Steve Jobs"
+      },
+      {
+        "id": 6,
+        "quote": "La patience est amère, mais ses fruits sont doux.",
+        "auteur": "Jean-Jacques Rousseau"
+      },
+      {
+        "id": 7,
+        "quote": "La seule limite à notre épanouissement de demain sera nos doutes d'aujourd'hui.",
+        "auteur": "Franklin D. Roosevelt"
+      },
+      {
+        "id": 8,
+        "quote": "Le succès, c'est d'aller d'échec en échec sans perdre son enthousiasme.",
+        "auteur": "Winston Churchill"
+      },
+      {
+        "id": 9,
+        "quote": "La plus grande gloire n'est pas de ne jamais tomber, mais de se relever à chaque chute.",
+        "auteur": "Confucius"
+      },
+      {
+        "id": 10,
+        "quote": "Le bonheur n'est pas d'avoir tout ce que l'on désire, mais d'apprécier ce que l'on a.",
+        "auteur": "H. Jackson Brown Jr."
+      }
+    ]
+  }
+  
