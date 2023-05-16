@@ -15,6 +15,7 @@ import Page7 from './pages/exo8'
 import Page8 from './pages/exo9'
 import Rr1 from './pages/appCalculatrice'
 import Rr2 from './pages/randomQuoteGenerator/appRandomQuote'
+import Rr3 from './pages/clock/appClock'
 
 class App extends React.Component {
   render() {
@@ -59,6 +60,9 @@ class App extends React.Component {
               <li>
                 <Link to="/rr2">Random quote generator</Link>
               </li>
+              <li>
+                <Link to="/rr3">25 + 5 O'Clock</Link>
+              </li>
             </ul>
           </nav>
 
@@ -74,6 +78,7 @@ class App extends React.Component {
             <Route path="/" element={<Accueil />} />
             <Route path="/rr1" element={<Rr1 />}/>
             <Route path="/rr2" element={<Rr2 />}/>
+            <Route path="/rr3" element={<Rr3 />}/>
           </Routes>
         </div>
       </BrowserRouter>
