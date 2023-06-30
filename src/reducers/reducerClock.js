@@ -5,10 +5,11 @@ import {ADD_TIME_TO_SESSION_TIME,ADD_TIME_TO_BREAK_TIME,SUBTRACT_TIME_TO_SESSION
 let sessionTime = 25;
 
 const initialState = {
-    timeLeft: sessionTime,
-    started: false,
+    timeLeft: sessionTime,//le temps qui apparait au chrono
+    started: false, //Chrono lancé ou pas (regarder la fonction tick())
     breakTime: 5,
     sessionTime: 25,
+    isSession: true //Permet de voir si session d'entrainment ou break
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -79,10 +80,28 @@ const rootReducer = (state = initialState, action) => {
         case TICK:
             console.log(state)
             console.log(action)
-            return {
-                ...state,
-                timeLeft: state.timeLeft - 1
-            };   
+            if (state.timeLeft === 0) {
+                if (state.isSession) {
+                    // Si c'était la fin du temps de session, bascule vers le temps de pause
+                    return {
+                        ...state,
+                        isSession: false,
+                        timeLeft: state.breakTime,
+                    };
+                } else {
+                    // Si c'était la fin du temps de pause, bascule vers le temps de session
+                    return {
+                        ...state,
+                        isSession: true,
+                        timeLeft: state.sessionTime,
+                    };
+                }
+            } else {
+                return {
+                    ...state,
+                    timeLeft: state.timeLeft - 1,
+                };
+            }  
             
         default:
             return state;

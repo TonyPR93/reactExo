@@ -21,6 +21,8 @@ class Clock extends React.Component{
 // adaptez les deux fonction pour le connect de l'app.js
 // refaire le reducerClock
     render(){
+        
+        console.log(this.props)
         return(
             <div>
                 <h3>25+5 O'Clock</h3>
