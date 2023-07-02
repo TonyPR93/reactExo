@@ -1,7 +1,8 @@
-import {INIT} from '../actions/actionMarkdown'
+import {INIT, RESET, UPDATE_TXT} from '../actions/actionMarkdown'
 
 const initialState = {
-    id:0
+    text:"test",
+    convertedText:''
 };
   
 const markdownReducer = (state = initialState, action) => {
@@ -9,8 +10,18 @@ const markdownReducer = (state = initialState, action) => {
         case INIT:
             console.log('Action INIT', state);
             return {
-                id: state.id + 1
+                ...state
             };
+        case RESET:
+            console.log("reset");
+            return{
+                ...state
+            }
+        case UPDATE_TXT:
+            console.log("UPDATE_TXT");
+            return{
+                convertedText : action.payload
+            }
         default:
             return state;
     }

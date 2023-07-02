@@ -1,30 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import TextArea from './components/textarea'
+import ConvertedText from './components/convertedText';
 
-import { connect } from 'react-redux';
-import { inite } from '../../actions/actionMarkdown';
+class MarkdownPreviewer extends React.Component {
 
-const MarkdownPreviewer = ({ id, inite }) => {
-    useEffect(() => {
-      inite();
-    }, []); // Le tableau vide [] indique que le useEffect s'exécutera une seule fois au montage du composant
-  
+  render() {
     return (
-      <div className="App">
-        <p>{id}</p>
+      <div>
+        <TextArea />
+        <ConvertedText />
       </div>
     );
-  };
-  
-  const mapStateToProps = (state) => {
-    return {
-      id: state.markdown.id
-    };
-  };
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      inite: () => dispatch(inite())
-    };
-  };
+  }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(MarkdownPreviewer);
+
+export default MarkdownPreviewer;
+
